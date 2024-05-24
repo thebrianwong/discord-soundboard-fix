@@ -14,3 +14,6 @@
   "dependencies": {
     "puppeteer": "^22.9.0",
     "puppeteer-core": "^22.9.0"
+  },
+  "type": "module"
+}
