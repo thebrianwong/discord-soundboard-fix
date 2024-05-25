@@ -36,4 +36,4 @@ const toggleNoiseSuppression = async (durationInSeconds: number) => {
   console.timeEnd("main");
 };
 
-toggleNoiseSuppression(2);
+toggleNoiseSuppression(Number(process.argv[2]));
