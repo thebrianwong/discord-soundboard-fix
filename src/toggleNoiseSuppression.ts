@@ -35,4 +35,14 @@ const toggleNoiseSuppression = async (durationInSeconds: number) => {
   console.timeEnd("main");
 };
 
+if (process.argv[2] === undefined) {
+  throw Error(
+    "You are missing a duration argument. Make sure to run the script as 'npm run toggle -- [DURATION]'."
+  );
+} else if (Number.isNaN(Number(process.argv[2]))) {
+  throw Error(
+    "You must provide a number argument. Make sure to run the script as 'npm run toggle -- [DURATION]'."
+  );
+}
+
 toggleNoiseSuppression(Number(process.argv[2]));
