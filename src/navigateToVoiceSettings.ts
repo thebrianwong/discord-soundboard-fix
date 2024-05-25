@@ -1,5 +1,4 @@
 import puppeteer from "puppeteer";
-// import puppeteer from "puppeteer-core";
 
 const navigateToVoiceSettings = async () => {
   console.time("nav");

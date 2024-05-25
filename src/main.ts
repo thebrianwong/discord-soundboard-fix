@@ -1,5 +1,4 @@
 import puppeteer from "puppeteer";
-// import puppeteer from "puppeteer-core";
 
 const main = async (durationInSeconds: number) => {
   console.time("main");
