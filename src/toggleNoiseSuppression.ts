@@ -1,8 +1,8 @@
 import puppeteer from "puppeteer";
 
-const main = async (durationInSeconds: number) => {
+const toggleNoiseSuppression = async (durationInSeconds: number) => {
   console.time("main");
-  console.time("timeToTurnOffNoiseSuppression");
+  console.time("timeToToggleNoiseSuppression");
 
   const browser = await puppeteer.connect({
     browserURL: "http://localhost:9222",
@@ -23,7 +23,7 @@ const main = async (durationInSeconds: number) => {
     // @ts-expect-error
     el?.click();
   }, noneButton);
-  console.timeEnd("timeToTurnOffNoiseSuppression");
+  console.timeEnd("timeToToggleNoiseSuppression");
 
   // Wait for soundboard sound to play
   await new Promise((resolve) => setTimeout(resolve, durationInSeconds * 1000));
@@ -36,4 +36,4 @@ const main = async (durationInSeconds: number) => {
   console.timeEnd("main");
 };
 
-main(2);
+toggleNoiseSuppression(2);
