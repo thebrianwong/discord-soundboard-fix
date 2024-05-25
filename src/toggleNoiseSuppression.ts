@@ -11,7 +11,8 @@ const toggleNoiseSuppression = async (durationInSeconds: number) => {
   const page = pages[0];
 
   // Find noise suppression radio buttons
-  const radioButtons = await page.$$(
+  // @ts-expect-error
+  const radioButtons: HTMLOptionElement[] = await page.$$(
     ".radioBar__70669.radioPositionLeft_c8ce26"
   );
   const krispButton = radioButtons[2];
@@ -20,7 +21,6 @@ const toggleNoiseSuppression = async (durationInSeconds: number) => {
   // Turn off noise suppression
   await page.evaluate((el) => {
     el.scrollIntoView();
-    // @ts-expect-error
     el?.click();
   }, noneButton);
   console.timeEnd("timeToToggleNoiseSuppression");
@@ -29,7 +29,6 @@ const toggleNoiseSuppression = async (durationInSeconds: number) => {
   await new Promise((resolve) => setTimeout(resolve, durationInSeconds * 1000));
 
   // Turn noise suppression back on
-  // @ts-expect-error
   await page.evaluate((el) => el?.click(), krispButton);
   await browser.disconnect();
 
