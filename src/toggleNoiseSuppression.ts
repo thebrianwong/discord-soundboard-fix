@@ -14,8 +14,8 @@ const toggleNoiseSuppression = async (durationInSeconds: number) => {
   const radioButtons = await page.$$(
     ".radioBar__70669.radioPositionLeft_c8ce26"
   );
-  const krispButton = radioButtons[0];
-  const noneButton = radioButtons[2];
+  const krispButton = radioButtons[2];
+  const noneButton = radioButtons[4];
 
   // Turn off noise suppression
   await page.evaluate((el) => {
