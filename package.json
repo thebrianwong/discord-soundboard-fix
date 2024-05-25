@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc -w",
-    "start": "node ./dist/toggleNoiseSuppression.js"
+    "toggle": "node ./dist/toggleNoiseSuppression.js",
+    "nav": "node ./dist/navigateToVoiceSettings.js"
   },
   "keywords": [],
   "author": "",
