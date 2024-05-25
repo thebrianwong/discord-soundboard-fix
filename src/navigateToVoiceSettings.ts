@@ -2,6 +2,7 @@ import puppeteer from "puppeteer";
 
 const navigateToVoiceSettings = async () => {
   console.time("nav");
+
   const browser = await puppeteer.connect({
     browserURL: "http://localhost:9222",
   });
@@ -26,6 +27,9 @@ const navigateToVoiceSettings = async () => {
   );
   // @ts-expect-error
   await page.evaluate((el) => el?.click(), voiceAndVideo);
+
+  await browser.disconnect();
+
   console.timeEnd("nav");
 };
 
