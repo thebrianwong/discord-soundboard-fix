@@ -163,6 +163,7 @@ const main = async (durationInSeconds: number) => {
   // const title2 = await page.title();
   // console.log(title2);
   // await browser.close();
+  await browser.disconnect();
 };
 
 main(2);
